@@ -1,6 +1,15 @@
 # myFirstGitTest
 a test for git
 
+Git能进行的操作很多，先主要了解
+
+- 绑定本地与远程git仓库
+- 创建/切换/删除分支
+- commit提交
+- push推送
+- 合并分支
+- 撤销合并
+
 🎈🎆🎇🎄🎊
 
 ### 1 仓库操作
@@ -27,22 +36,9 @@ git init newrepo
   git remote add origin https://github.com/wobukewu/git-test.git
 ```
 
-##### 1.3 提交
 
-提交的文件必须已纳入版本控制， git add 命令告诉 Git 开始对这些文件进行跟踪
 
-```
-git add *.c
-git add README
-```
-
-```shell
-git commit -m '提交描述descrp' 以m分支提交
-```
-
-> **注：** 在 Linux 系统中，commit 信息使用单引号 **'**，Windows 系统，commit 信息使用双引号 **"**。
-
-##### 1.4 克隆
+##### 1.5 克隆
 
 ```shell
 git clone <repo><directory>  克隆<repo>地址的仓库到本地目录<directory>
@@ -80,17 +76,48 @@ git checkout (branchname)
 
 切换分支的时候，Git 会用该分支的最后提交的快照替换你的工作目录的内容， 所以多个分支不需要多个目录。
 
-##### 2.4 合并分支
+##### 2.4 提交代码/暂存
+
+提交的文件必须已纳入版本控制， git add 命令告诉 Git 开始对这些文件进行跟踪
 
 ```
-git merge 
+git add *.c
+git add README
+```
+
+```shell
+git commit -m '提交描述descrp' 以m分支提交
+```
+
+> **注：** 在 Linux 系统中，commit 信息使用单引号 **'**，Windows 系统，commit 信息使用双引号 **"**。
+
+##### 2.5 推送代码/请求合并
+
+```shell
+git push origin master		origin 是远程仓库的别名，master 是要推送的本地分支名称
+```
+
+推送代码前必须先commit
+
+##### 2.6 合并分支
+
+推送代码后需要合并才会覆盖
+
+```shell
+git merge (branch)	合并zhi'ding
 ```
 
 合并并不会删除当前分支，可以继续在当前分支工作与合并
 
-##### 2.5 删除分支
+##### 2.7 删除分支
 
 ```
 $ git branch -d name
 ```
+
+### 
+
+
+
+
 
