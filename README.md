@@ -104,7 +104,7 @@ git push origin master		origin 是远程仓库的别名，master 是要推送的
 推送代码后需要合并才会覆盖
 
 ```shell
-git merge (branch)	合并zhi'ding
+git merge (branch)	合并指定分支到当前分支
 ```
 
 合并并不会删除当前分支，可以继续在当前分支工作与合并
@@ -115,7 +115,119 @@ git merge (branch)	合并zhi'ding
 $ git branch -d name
 ```
 
-### 
+# 我首个Git尝试
+
+A test for Git
+
+Git offers a variety of operations; initially, let's focus on:
+
+- Connecting local and remote Git repositories
+- Creating, switching, and deleting branches
+- Committing changes
+- Pushing commits
+- Merging branches
+- Reverting merges
+
+🎉🎆🎇🎄🎊
+
+### 1 Repository Operations
+
+#### 1.1 Designating the current directory as a Git repository
+
+To use the current directory as a Git repository, simply initialize it.
+
+```shell
+git init  	// This command will create a hidden `.git` directory in the current directory after execution.
+```
+
+For using a specified directory as a Git repository:
+
+```shell
+git init newrepo
+```
+
+After initialization, a `.git` directory will appear within the `newrepo` directory, containing all data and resources required by Git.
+
+#### 1.2 Connecting local and GitHub repositories
+
+```shell
+git remote add origin https://github.com/wobukewu/git-test.git
+```
+
+#### 1.5 Cloning
+
+```shell
+git clone <repo> <directory>  // Clone the repository at <repo> address to the local directory <directory>
+```
+
+### 2 Branch Management
+
+Nearly every version control system supports branches in some form, where a branch represents an independent line of development.
+
+Using branches means you can diverge from the main development line and continue working without affecting it.
+
+In Git, branches are essentially pointers to snapshots of changes.
+
+Git's branching model is often referred to as its **killer feature**, setting it apart from other version control systems.
+
+#### 2.1 Listing branches
+
+```
+git branch
+```
+
+#### 2.2 Creating a branch
+
+```
+git branch (branchname)    // You'll switch to this newly created branch immediately after creating it
+```
+
+#### 2.3 Switching branches
+
+```
+git checkout (branchname)
+```
+
+When switching branches, Git replaces the contents of your working directory with the snapshot pointed to by the last commit on that branch, meaning multiple branches don't require separate directories.
+
+#### 2.4 Staging/Pushing code
+
+Files to be committed must be under version control. The `git add` command tells Git to start tracking those files.
+
+```shell
+git add *.c
+git add README
+```
+
+```shell
+git commit -m 'commit description descrp'  // Commit with message using the `-m` option
+```
+
+> **Note:** In Linux systems, commit messages should be enclosed in single quotes **'**. In Windows systems, commit messages should be enclosed in double quotes **"**.
+
+#### 2.5 Pushing code/Making a merge request
+
+```shell
+git push origin master     // 'origin' is an alias for the remote repository, and 'master' is the name of the local branch to be pushed
+```
+
+Pushing code requires a prior commit.
+
+#### 2.6 Merging branches
+
+After pushing code, merging is necessary to incorporate changes.
+
+```shell
+git merge (branch)        // Merge the specified branch into the current branch
+```
+
+Merging does not delete the current branch; work can continue and further merges can be performed.
+
+#### 2.7 Deleting a branch
+
+```shell
+$ git branch -d name
+```
 
 
 
